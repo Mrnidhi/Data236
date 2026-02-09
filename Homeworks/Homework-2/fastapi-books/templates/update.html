@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update Book ID 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .msg {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update Book ID 1</h1>
+
+        <div class="msg">
+            <p><strong>Current Title:</strong> {{ book.title }}</p>
+            <p><strong>Current Author:</strong> {{ book.author }}</p>
+            <br>
+            <p>This action will overwrite Book ID 1 with:</p>
+            <ul>
+                <li><strong>Title:</strong> Harry Potter</li>
+                <li><strong>Author:</strong> J.K Rowling</li>
+            </ul>
+        </div>
+
+        <form action="/update/1" method="post">
+            <button type="submit">Submit Update</button>
+        </form>
+
+        <a href="/">Cancel</a>
+    </div>
+</body>
+
+</html>

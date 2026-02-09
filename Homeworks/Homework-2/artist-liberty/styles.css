@@ -1,0 +1,369 @@
+/* 
+   Artist Liberty - Portfolio Styles 
+   Clean, modern, minimal. 
+*/
+
+:root {
+    /* Color Palette - Keeping it neutral and professional */
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --bg-color: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --accent: #000000;
+    /* Sharp black for contrast */
+    --border-color: #eeeeee;
+
+    /* Spacing */
+    --container-width: 1100px;
+    --spacing-section: 5rem;
+    --spacing-unit: 1rem;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    /* Crisp text on Mac */
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Typography Helpers */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.overline {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    /* Subtle lift effect */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    width: 100%;
+    /* Full width on mobile forms */
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* HEADER & NAVIGATION */
+.site-header {
+    padding: 1.5rem 0;
+    position: sticky;
+    /* Keep nav accessible */
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    /* Modern frosted glass effect */
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: var(--spacing-section) 0;
+    background-color: var(--bg-color);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.hero-image img {
+    border-radius: 8px;
+    /* Softens the rigid box look */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    /* Soft modern shadow */
+}
+
+/* ABOUT SECTION */
+.about-section {
+    padding: var(--spacing-section) 0;
+    background-color: var(--bg-secondary);
+    /* Alternating background for depth */
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* WORK SECTION */
+.work-section {
+    padding: var(--spacing-section) 0;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Responsive grid automatically */
+    gap: 2rem;
+}
+
+.art-card {
+    group: hover;
+    /* Setup for hover effects */
+}
+
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    aspect-ratio: 4/3;
+    /* Enforce consistent shape */
+    background-color: #eee;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    /* Smooth zoom on hover */
+}
+
+.art-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.art-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.art-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: var(--spacing-section) 0;
+    background-color: var(--bg-secondary);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-text p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: white;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* MEDIA QUERIES (Responsiveness) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+        gap: 3rem;
+    }
+
+    .hero-image {
+        order: -1;
+        /* Image first on mobile? Or verify preference. Keeping regular for now. */
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide nav links on small screens for simplicity (or add hamburger menu) */
+        /* Note: For a "simple" portfolio, often just stacking or hiding is fine. */
+    }
+}
