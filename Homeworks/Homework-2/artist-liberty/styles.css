@@ -1,25 +1,21 @@
-/* 
-   Artist Liberty - Portfolio Styles 
-   Clean, modern, minimal. 
-*/
+/* Artist Liberty - Portfolio Styles */
 
 :root {
-    /* Color Palette - Keeping it neutral and professional */
+
     --text-primary: #1a1a1a;
     --text-secondary: #555555;
     --bg-color: #ffffff;
     --bg-secondary: #f9f9f9;
     --accent: #000000;
-    /* Sharp black for contrast */
     --border-color: #eeeeee;
 
-    /* Spacing */
+
     --container-width: 1100px;
     --spacing-section: 5rem;
     --spacing-unit: 1rem;
 }
 
-/* Reset & Base Styles */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +28,6 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-color);
     -webkit-font-smoothing: antialiased;
-    /* Crisp text on Mac */
 }
 
 img {
@@ -51,7 +46,7 @@ a:hover {
     opacity: 0.7;
 }
 
-/* Typography Helpers */
+/* Typography */
 h1,
 h2,
 h3 {
@@ -114,7 +109,6 @@ h3 {
 .btn-primary:hover {
     background-color: #333;
     transform: translateY(-2px);
-    /* Subtle lift effect */
 }
 
 .btn-secondary {
@@ -122,7 +116,6 @@ h3 {
     border: 2px solid var(--accent);
     color: var(--accent);
     width: 100%;
-    /* Full width on mobile forms */
     text-align: center;
     cursor: pointer;
 }
@@ -136,11 +129,9 @@ h3 {
 .site-header {
     padding: 1.5rem 0;
     position: sticky;
-    /* Keep nav accessible */
     top: 0;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    /* Modern frosted glass effect */
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
 }
@@ -190,16 +181,13 @@ h3 {
 
 .hero-image img {
     border-radius: 8px;
-    /* Softens the rigid box look */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    /* Soft modern shadow */
 }
 
 /* ABOUT SECTION */
 .about-section {
     padding: var(--spacing-section) 0;
     background-color: var(--bg-secondary);
-    /* Alternating background for depth */
 }
 
 .about-content {
@@ -226,21 +214,16 @@ h3 {
 .artwork-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    /* Responsive grid automatically */
     gap: 2rem;
 }
 
-.art-card {
-    group: hover;
-    /* Setup for hover effects */
-}
+
 
 .img-wrapper {
     overflow: hidden;
     border-radius: 6px;
     margin-bottom: 1rem;
     aspect-ratio: 4/3;
-    /* Enforce consistent shape */
     background-color: #eee;
 }
 
@@ -249,7 +232,6 @@ h3 {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
-    /* Smooth zoom on hover */
 }
 
 .art-card:hover .img-wrapper img {
@@ -343,7 +325,7 @@ h3 {
     color: var(--text-secondary);
 }
 
-/* MEDIA QUERIES (Responsiveness) */
+/* Responsive */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.2rem;
@@ -352,18 +334,14 @@ h3 {
     .hero-grid,
     .contact-wrapper {
         grid-template-columns: 1fr;
-        /* Stack vertically on mobile */
         gap: 3rem;
     }
 
     .hero-image {
         order: -1;
-        /* Image first on mobile? Or verify preference. Keeping regular for now. */
     }
 
     .nav-links {
         display: none;
-        /* Hide nav links on small screens for simplicity (or add hamburger menu) */
-        /* Note: For a "simple" portfolio, often just stacking or hiding is fine. */
     }
 }

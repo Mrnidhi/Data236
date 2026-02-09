@@ -6,8 +6,6 @@ from typing import List, Optional
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-# In-memory storage
-# Each book is a dict: {"id": int, "title": str, "author": str}
 BOOKS = []
 
 @app.get("/")
@@ -21,7 +19,7 @@ def home(request: Request, q: Optional[str] = None):
     else:
         filtered_books = BOOKS
         
-    # Check if ID=1 exists to conditionally show the update link
+
     has_id_one = any(b["id"] == 1 for b in BOOKS)
     
     return templates.TemplateResponse("home.html", {
@@ -84,8 +82,6 @@ def delete_max_book():
     """
     if BOOKS:
         max_id = max(b["id"] for b in BOOKS)
-        # Remove the book with max_id
-        # Iterate backwards or use a list comprehension to remove
         for i, book in enumerate(BOOKS):
             if book["id"] == max_id:
                 del BOOKS[i]
