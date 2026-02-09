@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Q1: Page title with my name -->
+    <title>HW1-SrinidhiGowda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .required {
+            color: red;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-container input {
+            width: auto;
+        }
+
+        .checkbox-container label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        #successMessage {
+            display: none;
+            background-color: #27ae60;
+            color: white;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Q2: Using h1 tag for the blog heading (largest font size) -->
+        <h1>Blog Submission Form</h1>
+
+        <div id="successMessage">Blog post submitted successfully!</div>
+
+        <form id="blogForm">
+            <!-- Q3a: Blog title input - text type, required, autofocus, with placeholder -->
+            <div class="form-group">
+                <label for="blogTitle">Blog Title <span class="required">*</span></label>
+                <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter the title of your blog" required
+                    autofocus>
+            </div>
+
+            <!-- Q3b: Author name - text input, required, placeholder -->
+            <div class="form-group">
+                <label for="authorName">Author Name <span class="required">*</span></label>
+                <input type="text" id="authorName" name="authorName" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Q3c: Email field - using email type for built-in validation -->
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Q3d: Blog content - textarea for longer text -->
+            <div class="form-group">
+                <label for="blogContent">Blog Content <span class="required">*</span></label>
+                <textarea id="blogContent" name="blogContent" placeholder="Write your content here..."
+                    required></textarea>
+            </div>
+
+            <!-- Q3e: Category dropdown with the 4 required options -->
+            <div class="form-group">
+                <label for="category">Category <span class="required">*</span></label>
+                <select id="category" name="category" required>
+                    <option value="">Select...</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+
+            <!-- Q3f: Terms checkbox with label -->
+            <div class="form-group">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions <span class="required">*</span></label>
+                </div>
+            </div>
+
+            <!-- Q3g: Submit button -->
+            <button type="submit">Publish Blog</button>
+        </form>
+    </div>
+
+    <!-- Q4: Linking external JavaScript file -->
+    <script src="hw1-SrinidhiGowda.js"></script>
+</body>
+
+</html>
