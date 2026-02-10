@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Liberty - Book Management</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <h1 class="heading">Artist Liberty - Book Management</h1>
+
+    <!-- Search Section -->
+    <div class="actions-container">
+        <h3>Search Books</h3>
+        <input type="text" id="searchQuery" placeholder="Search by title...">
+        <button onclick="searchBooks()">Search</button>
+        <button onclick="clearSearch()" class="btn-secondary">Clear</button>
+    </div>
+
+    <h2>Books List</h2>
+    <table id="bookTable" class="book-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody id="bookTableBody">
+        </tbody>
+    </table>
+
+    <!-- Add Book Section -->
+    <div class="actions-container">
+        <h3>Add Book</h3>
+        <input type="text" id="createTitle" placeholder="Enter book title">
+        <input type="text" id="createAuthor" placeholder="Enter author name">
+        <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <!-- Update Book ID 1 Section -->
+    <div class="actions-container">
+        <h3>Update Book ID 1</h3>
+        <p class="info-text">Updates Book #1 to: "Harry Potter" by "J.K Rowling"</p>
+        <button onclick="updateBookOne()">Update Book 1</button>
+    </div>
+
+    <!-- Delete Highest ID Section -->
+    <div class="actions-container">
+        <h3>Delete Book (Highest ID)</h3>
+        <p class="info-text">Removes the book with the highest ID from the list</p>
+        <button onclick="deleteMaxBook()" class="btn-danger">Delete Highest ID</button>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

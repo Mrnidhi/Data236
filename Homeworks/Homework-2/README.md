@@ -1,14 +1,47 @@
-# DATA-236 Homework 2
+# Homework 2 — DATA-236
 
-## Part 1 & 2 - Artist Liberty Book Manager (HTML/CSS + FastAPI)
-A FastAPI book management app styled with the Artist Liberty theme. Supports adding, updating (Book ID 1), deleting (highest ID), and searching by title. Uses Jinja2 templates with external CSS.
+## Part 1 & 2: Artist Liberty + FastAPI Book Management
 
-**Files:** `fastapi-books/main.py`, `fastapi-books/static/styles.css`, `fastapi-books/templates/`
+**Folder:** `book-management/`
 
-## Part 3 - Stateful Agent Graph (LangGraph)
-A stateful agent graph using LangGraph with Planner, Reviewer, and Supervisor nodes following the Hub-Spoke routing pattern. Includes a correction loop and turn-count termination.
+A FastAPI-based Book Management System with Artist Liberty styling.
 
-**File:** `agent-graph/agent_graph.py`
+### Features
+1. **Add Book** — Enter title and author, auto-assigns ID
+2. **Update Book ID 1** — Updates to "Harry Potter" by "J.K Rowling"
+3. **Delete Highest ID** — Removes the book with the max ID
+4. **Search** — Filter books by title
+
+### Run
+```bash
+cd book-management
+pip install -r requirements.txt
+python main.py
+# Open http://localhost:8080
+```
 
 ---
-Srinidhi Gowda | DATA-236 Distributed Systems
+
+## Part 3: Stateful Agent Graph (LangGraph)
+
+**Folder:** `agent_graph/`
+
+A LangGraph implementation using the **Supervisor pattern** with Planner/Reviewer agents.
+
+### Architecture
+```
+Supervisor → Planner → Supervisor → Reviewer → Supervisor → END
+                                      ↓ (has issues)
+                              ← Planner (correction loop)
+```
+
+- **AgentState**: Shared memory (title, content, email, strict, task, llm, planner_proposal, reviewer_feedback, turn_count)
+- **Planner Node**: Creates proposals, revises based on feedback
+- **Reviewer Node**: Evaluates proposals, reports issues
+- **Supervisor**: Routes between agents, prevents infinite loops with turn counter
+
+### Run Tests
+```bash
+pip install langgraph langchain
+python test_graph.py
+```
