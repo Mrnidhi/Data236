@@ -93,16 +93,15 @@ async function updateBookOne() {
 }
 
 async function deleteMaxBook() {
-    if (!confirm('Delete the book with the highest ID?')) return;
-
     try {
         const response = await fetch(`${API_URL}/max`, {
             method: 'DELETE'
         });
 
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.detail || 'Failed to delete book');
+            let msg = 'Failed to delete book';
+            try { const err = await response.json(); msg = err.detail || msg; } catch (e) { }
+            throw new Error(msg);
         }
 
         await loadBooks();
