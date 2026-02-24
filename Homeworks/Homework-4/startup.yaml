@@ -1,0 +1,71 @@
+# startup.yaml - DATA236 Homework 4
+# How to run the project from scratch
+
+# ─── Step 1: Start MySQL ───
+step_1_mysql:
+  description: "Make sure MySQL is running"
+  commands:
+    - brew services start mysql
+  notes:
+    - "Password: Root@1234"
+    - "Database: book_db (already created)"
+
+# ─── Step 2: Run Part 1 (Book Management App) ───
+step_2_backend:
+  description: "Start the FastAPI backend"
+  directory: "book-management/backend"
+  commands:
+    - cd book-management/backend
+    - ../.venv/bin/python3 -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+  notes:
+    - "Keep this terminal open"
+    - ".env file has the database connection string"
+
+step_3_frontend:
+  description: "Start the React frontend (new terminal)"
+  directory: "book-management/frontend"
+  commands:
+    - cd book-management/frontend
+    - npm run dev
+  notes:
+    - "Opens at http://localhost:5173"
+    - "Login: srinidhi@test.com / test1234"
+
+step_4_demo:
+  description: "Demo walkthrough"
+  steps:
+    - "Go to http://localhost:5173"
+    - "Click Login, enter srinidhi@test.com / test1234"
+    - "Click Add Book, fill in title + author, submit"
+    - "See the book in the table on Home"
+    - "Click Update, change title, submit"
+    - "Click Delete, confirm deletion"
+    - "Click Logout"
+
+step_5_postman:
+  description: "Postman API testing (for screenshots)"
+  endpoints:
+    - "POST http://localhost:8000/auth/login  {email, password}"
+    - "POST http://localhost:8000/books        {title, author}"
+    - "GET  http://localhost:8000/books"
+    - "GET  http://localhost:8000/books/1"
+    - "PUT  http://localhost:8000/books/1      {title, author}"
+    - "DELETE http://localhost:8000/books/1"
+
+# ─── Step 3: Run Part 2 (Chunking Comparison) ───
+step_6_chunking:
+  description: "Run the LlamaIndex chunking comparison"
+  directory: "chunking-comparison"
+  commands:
+    - cd chunking-comparison
+    - .venv/bin/python3 chunking_comparison.py
+  notes:
+    - "Takes about 3-5 minutes"
+    - "Output goes to terminal (also saved in output.txt)"
+
+# ─── Shutdown ───
+shutdown:
+  commands:
+    - "Ctrl+C in backend terminal"
+    - "Ctrl+C in frontend terminal"
+    - brew services stop mysql

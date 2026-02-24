@@ -1,0 +1,267 @@
+/* styles.css – Book Management App */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #343a40;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.brand {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #007bff;
+}
+
+.navlinks {
+  display: flex;
+  gap: 6px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.navlinks a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navlinks .active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Login bar */
+.loginbar {
+  padding: 10px 16px;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.loginbar-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid #dee2e6;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  padding: 18px;
+}
+
+/* Typography */
+.page-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: 14px;
+  max-width: 500px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+}
+
+input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+input:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+input::placeholder {
+  color: #adb5bd;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #e9ecef;
+}
+
+.btn.primary {
+  background: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #0069d9;
+}
+
+.btn.danger {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background: #c82333;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  color: #495057;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 14px;
+}
+
+.table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Notice */
+.notice {
+  padding: 12px 14px;
+  border-radius: 4px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Disabled link */
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .container {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+}
