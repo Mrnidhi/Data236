@@ -1,0 +1,6 @@
+started_at,ended_at,rideable_type,start_station_name,end_station_name
+2024-05-01,2024-05-01 00:11:00,classic_bike,Station A,Station C
+2024-05-06,2024-05-06 00:07:00,classic_bike,Station A,Station C
+2024-05-11,2024-05-11 00:10:00,classic_bike,Station A,Station C
+2024-05-16,2024-05-16 00:06:00,classic_bike,Station A,Station C
+2024-05-21,2024-05-21 00:14:00,classic_bike,Station A,Station C
